@@ -1,0 +1,492 @@
+/*
+COLOR PALETTE
+
+#FAFAFA - main background (light gray)
+#707070 - sidebar background, honor text color (gray)
+#FFFFFF - sidebar, border, profile backgrounds, users and exit texts color (white)
+#121212 - users background (dark black)
+#1E1E1E - profile name text color (dark black)
+#9E9E9E - fields text color (light gray)
+--------------------------------------------------
+*/
+
+@font-face {
+  font-family: "IRANSansFaNum";
+  src: url("../fonts/Iran Sans Medium.ttf")
+  format("truetype");
+  font-weight: 500;
+  font-style: medium;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IRANSansFaNum-Bold";
+  src: url("../fonts/IRANSansFaNum_Bold.ttf")
+  format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* GLOBAL STYLES */
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    background-color: #FAFAFA;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 0;
+}
+
+h2, h3, p {
+  font-family: "IRANSansFaNum", Tahoma, sans-serif;
+  font-size: 1.6rem;
+  color: #1E1E1E;
+  margin: 0;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0;
+}
+
+p, h3 {
+  font-size: 1.2rem;
+  color: #707070;
+}
+
+/* Sidebar Styles
+-------------------------------------------------- */
+
+.sidebar {
+  background: #707070;
+  width: 98px;
+  display: flex;
+  flex: 1 0 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  /* height: 1024px; */
+  height: 100vh;
+  position: fixed;
+}
+
+/* @media  (max-width: 1251px) and (min-width: 985px){
+  .sidebar {
+    height: 754px;
+  } 
+} 
+
+@media  (max-width: 984px) {
+  .sidebar {
+    height: 1095px;
+  } 
+}
+
+@media  (max-width: 767px) {
+  .sidebar {
+    height: 1347px;
+  } 
+} 
+   */
+
+ @media  (max-width: 454px) {
+  .sidebar {
+    width: 0;
+    visibility: collapse;
+  } 
+}
+
+.sidebar-profile {
+  width: 74px;
+  height: 88px;
+  margin: 0 auto 8px;
+  border-bottom: 1px solid #FFFFFF;
+}
+
+.profile-sidebar-pic {
+  width: 48px;
+  height: 48px;
+  margin: 24px 13px 16px;
+  display: inline-block;
+}
+
+.users {
+  width: 98px;
+  height: 69px;
+  display: block;
+  background: #121212;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.users-icon {
+  margin-top: 17px;
+  margin-bottom: 5px;
+}
+
+.users-text {
+  color: #FFFFFF;
+  width: 43px;
+  height: 25px;
+}
+
+.exit {
+  width: 36px;
+  height: 53px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.exit-text {
+  color: #FFFFFF;
+   height: 25px;
+   margin-top: 4px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+}
+
+a {
+  text-decoration: none;
+  text-decoration-style: wavy;
+}
+
+a:focus {
+  outline: 2px solid #4e4c4c;   
+  outline-offset: 4px;          
+  border-radius: 4px;          
+}
+
+
+/* Main Styles
+-------------------------------------------------- */
+ main {
+  display: flex;
+  flex-direction: row-reverse;
+  flex: 1 0 0;
+  padding-right: 98px;
+}
+
+@media  (max-width: 767px) {
+  main {
+    direction: rtl;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+}
+
+@media  (max-width: 580px) and (min-width: 455px) {
+  main {
+    padding-right: clamp(12px, 4vw, 56px);
+  }
+}
+
+@media  (max-width: 454px) {
+    main {
+     padding-right: 0px;
+     margin-right: -30px;
+  }
+}
+
+
+/* User Profle */
+.user-profile {
+  width: 255px;
+  height: 200px;
+  background: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: #00000029 0 4px 4px;
+  margin-top: 33px;
+  margin-right: 166px;
+  position: relative;
+  flex-shrink: 0;
+  min-width: 255px;
+}
+
+.user-profile:hover {
+  transform: translateY(-5px);
+  transition: all 0.3s ease-in-out;
+}
+
+@media  (max-width: 1535px) and (min-width: 1280px) {
+  .user-profile {
+    margin-right: 39px;
+  }
+} 
+
+@media  (max-width: 1279px) and (min-width: 1024px) {
+  .user-profile {
+    margin-right: 50px;
+  }
+}
+
+@media  (max-width: 1024px) and (min-width: 768px) {
+  .user-profile {
+    margin-right: 62px;
+  }
+}
+
+@media  (max-width: 767px) {
+  .user-profile {
+    margin-right: 143px;
+  }
+}
+
+@media  (max-width: 454px) {
+  .user-profile {
+    margin-right: 20vw;
+  }
+
+  .courses-taken {
+    margin-right: -14vw;
+  }
+}
+
+.more-btn {
+  position: absolute;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  top: 14px;
+  left: 18px;
+}
+
+.more-options {
+  position: static;
+  display: block;
+}
+
+
+.profile-pic {
+  position: absolute;
+  top: 22px;
+  left: 95px;
+}
+
+.user-name {
+  width: 90px;
+  height: 25px;
+  position: absolute;
+  top: 112px;
+  left: 83px;
+  text-align: center;
+  padding: 6px 0 3px;
+}
+
+.user-achievements {
+  width: 119px;
+  height: 19px;
+  position: absolute;
+  top: 153px;
+  left: 68px;
+  padding: 5px 0 2px;
+}
+
+.user-achievements span {
+  margin-right: 6px;
+  color: #9E9E9E;
+}
+
+/* Courses Taken */
+.courses-taken {
+  direction: rtl;
+}
+
+.courses-taken-header {
+  width: 201px;
+  height: 25px;
+  margin-top: 33px;
+  margin-right: 36px;
+  padding: 5px 0 4px;
+  right: 0;
+}
+
+@media  (max-width: 1535px) and (min-width: 768px) {
+  .courses-taken-header {
+    margin-right: 40px;
+  }
+}
+
+@media  (max-width: 1535px) and (min-width: 1280px){
+  .courses-taken-header {
+    margin-top: 48px;
+  }
+}
+
+@media  (max-width: 767px) {
+  .courses-taken-header {
+    margin-top: 48px;
+    margin-right: 147px;
+  }
+}
+
+.course-cards {
+  margin: 20px 36px 0 0;
+  display: flex;
+  direction: rtl;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+@media  (max-width: 1535px){
+  .course-cards {
+    gap: 24px;
+  }
+}
+
+@media  (max-width: 767px) {
+  .course-cards {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin: 20px 143px 0 0;
+  }
+}
+
+/* Course Card */
+.course-card {
+  width: 255px;
+  height: 316px;
+  background: #FFFFFF;
+  box-shadow: #00000029 0 2px 4px;
+  border-radius: 4px;
+  opacity: 1;
+}
+
+.course-card:hover {
+  transform: scale(1.05);
+  transition: all 0.4s ease-in-out; 
+}
+
+.course-card:active {
+  transform: translateY(-10px);
+  opacity: 0.8; 
+  transition: all 0.05s ease-in-out; 
+}
+
+.course-cards a:focus {
+  outline: 2px solid #5f0909;   
+  outline-offset: 4px;          
+  border-radius: 4px;
+  transform: scale(1.05);
+  transition: all 0.4s ease-in-out;          
+}
+
+.card-image-wrapper {
+  width: 255px;
+  height: 115px;
+  overflow: hidden;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.card-image {
+  width: 255px;
+  transform: translate(0, -120px);
+}
+
+
+.course-title {
+  font-family: "Calibri Regular", "Calibri", sans-serif;
+  font-size: 1.4rem;
+  font-style: regular;
+  font-weight: 400;
+  color: #505050;
+  width: 231px;
+  height: 66px;
+  margin: 12px 12px 8px;
+}
+
+.course-info {
+  width: 207px;
+  height: 68px;
+  margin: 0 auto;
+  text-align: center;
+  border-top: #DDDDDD 1px solid;
+  position: relative;
+}
+
+.institute {
+  width: 67px;
+  height: 22px;
+  margin: 8px auto 0; 
+  position: relative;
+}
+
+.logo {
+  width: 16px;
+  position: absolute;
+  top: 3px;
+  right: 0;
+}
+
+.institute h3 {
+  position: absolute;
+  top: 5px;
+  right: 24px;
+}
+
+.instructor {
+  width: 68px;
+  height: 22px;
+  padding: 5px 0;
+  margin: 4px auto 0;
+  color: #9E9E9E;
+}
+
+.progress-bar {
+  text-align: center;
+}
+
+.progress-bar label{
+  display: block;
+  width: 21px;
+  height: 19px;
+  text-align: center;
+  font-family: "IRANSansFaNum-Bold", Tahoma, sans-serif;
+  font-size: 1.2rem;
+  font: normal normal medium 1.2rem/1.9rem IRANSansFaNum-Bold, Tahoma, sans-serif;
+  margin: 0 auto;
+  color: #707070;
+}
+
+/* make sure the progress fits the .progress-bar container */
+.progress-bar progress {
+  -webkit-appearance: none; /* remove default WebKit styling */
+  appearance: none;         /* remove default styling in other engines */
+  width: 223px;             /* match .progress-bar width */
+  height: 12px;             /* desired height */
+  border-radius: 9px;       /* round the outer track */
+  overflow: hidden;         /* important so the value doesn't overflow rounded corners */
+  background: transparent;  /* let the pseudo element paint the track */
+  border: none;
+  display: block;
+  margin: 4px auto 0;       
+}
+
+/* WebKit browsers (Chrome, Safari, Edge Chromium) */
+.progress-bar progress::-webkit-progress-bar {
+  background-color: #DDDDDD; /* track color */
+  border-radius: 9px;
+}
+
+.progress-bar progress::-webkit-progress-value {
+  background-color: #707070; /* fill color */
+  border-radius: 9px;
+}
+
+/* Firefox */
+.progress-bar progress::-moz-progress-bar {
+  background-color: #707070;
+  border-radius: 9px;
+}
